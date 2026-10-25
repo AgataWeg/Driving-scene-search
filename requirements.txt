@@ -1,0 +1,11 @@
+nuscenes-devkit
+torch
+open_clip_torch
+transformers
+sentencepiece
+protobuf
+faiss-cpu
+pandas
+numpy
+pillow
+tqdm
