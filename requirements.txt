@@ -9,3 +9,5 @@ pandas
 numpy
 pillow
 tqdm
+anthropic
+python-dotenv
