@@ -6,3 +6,4 @@ indexes/
 *.npy
 *.faiss
 notes.txt
+results/*

@@ -25,7 +25,18 @@ python -m scripts.build_index --model siglip
 
 # 3. Search
 python -m scripts.search_cli --model clip "a pedestrian on a street at night"
+
+# 4. Evaluate and compare models (uses the built indexes; writes results/eval.csv)
+python -m scripts.evaluate
 ```
+
+## Evaluation
+
+`src/evaluate.py` defines benchmark queries, each with label conditions (e.g. night + pedestrian). A frame is relevant if it meets all conditions. Each query ranks all frames and reports:
+- `P@k`: share of the top k that are relevant
+- `R@k`: share of all relevant frames found in the top k (low for common labels by construction)
+- `AP`: average precision over the full ranking; the mean over queries is mAP
+- `base_rate`: share of relevant frames in the dataset, i.e. what a random ranking would score. Compare against this, since some labels (e.g. `car`) appear in almost every frame.
 
 ## How it works
 
